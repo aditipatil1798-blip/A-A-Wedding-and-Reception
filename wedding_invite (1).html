@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditi & Akshar | Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Elegant Fonts: Playfair for headings, Lora for body, Great Vibes for cursive names -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lora"', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#e8f0e8',
+                            darkgreen: '#2c4c3b',
+                            yellow: '#fcf3d9',
+                            darkyellow: '#b58a30',
+                            blue: '#1a2436',
+                            gold: '#d4af37',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles & Patterns */
+        body {
+            background-color: #faf9f5;
+            color: #2c4c3b;
+        }
+        
+        .floral-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c4c3b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Beautiful Watercolor Pastel Gradient */
+        .watercolor-bg {
+            background: linear-gradient(135deg, #e4eedb 0%, #fde4e9 35%, #fbf3d5 70%, #e2eff8 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Northern Lights (Aurora) Animated Background */
+        .aurora-bg {
+            background: linear-gradient(
+                -45deg,
+                #0b132b, /* deep space blue */
+                #059669, /* vivid emerald green */
+                #db2777, /* vivid pink */
+                #5b21b6, /* deep violet */
+                #0b132b  /* deep space blue */
+            );
+            background-size: 400% 400%;
+            animation: auroraMove 15s ease infinite;
+        }
+
+        @keyframes auroraMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .stars-pattern {
+            background-image: radial-gradient(circle at center, #ffffff 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.2;
+        }
+
+        /* Starry Night Vibe for Reception */
+        .starry-night-bg {
+            background: radial-gradient(ellipse at bottom, #0f172a 0%, #000000 100%);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .twinkling-stars {
+            background: transparent url('data:image/svg+xml;utf8,<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="1.5" fill="white" opacity="0.8"/><circle cx="150" cy="80" r="2" fill="white" opacity="0.9"/><circle cx="300" cy="40" r="1.5" fill="white" opacity="0.6"/><circle cx="80" cy="250" r="1" fill="white" opacity="0.7"/><circle cx="250" cy="300" r="2.5" fill="white" opacity="0.8"/><circle cx="350" cy="200" r="1.5" fill="white" opacity="0.5"/></svg>') repeat top center;
+            animation: twinkle 4s infinite linear;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Leaf decorative corners */
+        .corner-leaf {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Soft Pastel Palace Doors Overlay Styles */
+        .door-panel {
+            background-color: #f6fae6; /* Soft pastel background */
+            background-image: linear-gradient(135deg, #e4eedb 0%, #fde4e9 100%);
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
+        }
+        .door-details {
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 10 L45 30 L65 35 L45 40 L40 60 L35 40 L15 35 L35 30 Z' fill='%23d4af37' fill-opacity='0.15'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+        }
+    </style>
+</head>
+<body id="main-body" class="antialiased selection:bg-brand-darkgreen selection:text-white overflow-x-hidden h-screen overflow-y-hidden">
+
+    <!-- Audio Element (Hidden) -->
+    <audio id="bgMusic" loop preload="auto">
+        <!-- Make sure you upload a file named 'music.mp3' to your GitHub repo! -->
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Palace Doors Entry Overlay -->
+    <div id="entry-overlay" class="fixed inset-0 z-[100] flex items-center justify-center bg-white transition-opacity duration-1000">
+        <!-- Left Door -->
+        <div id="door-left" class="door-panel absolute top-0 left-0 w-1/2 h-full border-r-2 border-[#d4af37]/40 transition-transform duration-1000 ease-in-out origin-left flex justify-end items-center overflow-hidden">
+            <div class="absolute inset-0 door-details"></div>
+            <!-- Decorative Gold Frame -->
+            <div class="absolute inset-4 md:inset-8 border border-[#d4af37]/30 rounded pointer-events-none"></div>
+            <div class="absolute inset-6 md:inset-10 border border-[#d4af37]/20 rounded pointer-events-none"></div>
+            <!-- Door Handle -->
+            <div class="w-3 h-24 bg-gradient-to-b from-[#d4af37] via-[#fef08a] to-[#b8942d] rounded-full mr-4 md:mr-10 shadow-[0_2px_10px_rgba(0,0,0,0.1)] z-10 border border-[#fef08a]/60"></div>
+        </div>
+        
+        <!-- Right Door -->
+        <div id="door-right" class="door-panel absolute top-0 right-0 w-1/2 h-full border-l-2 border-[#d4af37]/40 transition-transform duration-1000 ease-in-out origin-right flex justify-start items-center overflow-hidden">
+            <div class="absolute inset-0 door-details"></div>
+            <!-- Decorative Gold Frame -->
+            <div class="absolute inset-4 md:inset-8 border border-[#d4af37]/30 rounded pointer-events-none"></div>
+            <div class="absolute inset-6 md:inset-10 border border-[#d4af37]/20 rounded pointer-events-none"></div>
+            <!-- Door Handle -->
+            <div class="w-3 h-24 bg-gradient-to-b from-[#d4af37] via-[#fef08a] to-[#b8942d] rounded-full ml-4 md:ml-10 shadow-[0_2px_10px_rgba(0,0,0,0.1)] z-10 border border-[#fef08a]/60"></div>
+        </div>
+        
+        <!-- Center Open Button -->
+        <div id="open-btn-container" class="relative z-[101] text-center transition-opacity duration-500 px-4">
+            <div class="mb-10 font-cursive text-6xl md:text-8xl text-brand-darkgreen drop-shadow-sm">Aditi & Akshar</div>
+            <button onclick="openInvitation()" class="bg-white/95 text-brand-darkgreen font-serif text-lg md:text-xl px-12 py-4 rounded-full shadow-[0_4px_20px_rgba(44,76,59,0.15)] hover:shadow-[0_4px_25px_rgba(44,76,59,0.25)] hover:scale-105 transition-all duration-300 ring-2 ring-[#d4af37]/40 uppercase tracking-widest font-medium">
+                Tap to Open Invitation
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Audio Toggle Button -->
+    <button id="music-toggle" onclick="toggleMusic()" class="hidden fixed bottom-6 left-6 z-50 bg-white/90 backdrop-blur p-4 rounded-full shadow-[0_0_20px_rgba(0,0,0,0.15)] text-brand-darkgreen hover:bg-brand-green transition-all duration-300 group border border-brand-green">
+        <!-- Play Icon -->
+        <svg id="icon-play" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Pause Icon -->
+        <svg id="icon-pause" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 watercolor-bg border-b border-brand-green/50 transition-all duration-300 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="font-cursive text-2xl text-brand-darkgreen">A & A</a>
+                <div class="hidden md:flex space-x-8 font-serif text-sm uppercase tracking-widest">
+                    <a href="#home" class="hover:text-brand-darkyellow transition-colors">Home</a>
+                    <a href="#events" class="hover:text-brand-darkyellow transition-colors">Events</a>
+                    <a href="#rsvp" class="hover:text-brand-darkyellow transition-colors">RSVP</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 floral-pattern watercolor-bg overflow-hidden">
+        <!-- Decorative Banana Leaves corners -->
+        <svg class="absolute top-0 left-0 w-48 h-48 md:w-72 md:h-72 text-[#4a7c59] opacity-80 pointer-events-none" viewBox="0 0 200 200">
+            <!-- Main Leaf shape -->
+            <path d="M-20,-20 C80,10 160,80 180,180 C120,160 40,80 -20,-20 Z" fill="currentColor"/>
+            <!-- Stem/Vein -->
+            <path d="M-20,-20 C50,50 120,120 180,180" stroke="#2c4c3b" stroke-width="3" fill="none"/>
+            <!-- Leaf details/veins -->
+            <path d="M10,10 L40,30 M30,40 L70,60 M60,70 L100,90 M90,100 L130,120 M120,130 L150,145" stroke="#2c4c3b" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <path d="M-5,25 L25,45 M5,55 L45,75 M30,90 L75,110 M60,125 L105,145 M95,160 L130,175" stroke="#2c4c3b" stroke-width="1.5" stroke-dasharray="4 2"/>
+        </svg>
+        <svg class="absolute bottom-0 right-0 w-48 h-48 md:w-72 md:h-72 text-[#4a7c59] opacity-80 pointer-events-none transform rotate-180" viewBox="0 0 200 200">
+            <path d="M-20,-20 C80,10 160,80 180,180 C120,160 40,80 -20,-20 Z" fill="currentColor"/>
+            <path d="M-20,-20 C50,50 120,120 180,180" stroke="#2c4c3b" stroke-width="3" fill="none"/>
+            <path d="M10,10 L40,30 M30,40 L70,60 M60,70 L100,90 M90,100 L130,120 M120,130 L150,145" stroke="#2c4c3b" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <path d="M-5,25 L25,45 M5,55 L45,75 M30,90 L75,110 M60,125 L105,145 M95,160 L130,175" stroke="#2c4c3b" stroke-width="1.5" stroke-dasharray="4 2"/>
+        </svg>
+
+        <!-- Gazebo / Canopy Background Illustration -->
+        <div class="absolute bottom-0 w-full flex justify-center opacity-30 pointer-events-none z-0">
+            <svg class="w-full max-w-2xl text-brand-darkgreen" viewBox="0 0 400 150" fill="none" stroke="currentColor" stroke-width="1.5">
+                <!-- Dome -->
+                <path d="M150 70 C150 20, 250 20, 250 70" fill="currentColor" fill-opacity="0.1"/>
+                <path d="M150 70 C150 20, 250 20, 250 70" />
+                <path d="M200 25 L200 10 M195 15 L205 15" stroke-width="2"/>
+                <!-- Pillars -->
+                <rect x="155" y="70" width="8" height="80" fill="currentColor" fill-opacity="0.1"/>
+                <rect x="237" y="70" width="8" height="80" fill="currentColor" fill-opacity="0.1"/>
+                <line x1="155" y1="70" x2="155" y2="150" />
+                <line x1="163" y1="70" x2="163" y2="150" />
+                <line x1="237" y1="70" x2="237" y2="150" />
+                <line x1="245" y1="70" x2="245" y2="150" />
+                <!-- Base -->
+                <path d="M140 150 L260 150" stroke-width="3"/>
+                <!-- Side Fences -->
+                <path d="M0 130 L155 130 M245 130 L400 130" stroke-dasharray="4 4"/>
+                <path d="M0 150 L155 150 M245 150 L400 150" />
+                <!-- Subtle botanical vines on pillars -->
+                <path d="M159 70 Q150 90 159 110 Q168 130 159 150" stroke-width="1" stroke-dasharray="2 2"/>
+                <path d="M241 70 Q232 90 241 110 Q250 130 241 150" stroke-width="1" stroke-dasharray="2 2"/>
+            </svg>
+        </div>
+
+        <div class="text-center px-4 max-w-4xl mx-auto z-10 animate-fade-in-up">
+            <p class="font-sans italic text-lg md:text-xl text-gray-600 mb-8 tracking-wide">
+                Together with our families
+            </p>
+            
+            <h1 class="font-cursive text-6xl md:text-8xl lg:text-9xl text-brand-darkgreen mb-6 drop-shadow-sm">
+                Aditi <span class="text-4xl md:text-6xl mx-2">&</span> Akshar
+            </h1>
+            
+            <p class="font-sans italic text-lg md:text-xl text-gray-600 mb-10">
+                cordially invite you to our<br>
+                <span class="font-serif text-2xl md:text-3xl font-semibold not-italic block mt-3 text-brand-darkgreen">Wedding Celebrations</span>
+            </p>
+            
+            <div class="inline-block border-y-2 border-brand-darkgreen py-4 px-8 mb-12">
+                <p class="font-serif text-xl md:text-2xl tracking-widest text-brand-darkgreen">
+                    5<sup class="text-sm">th</sup>, 6<sup class="text-sm">th</sup> & 19<sup class="text-sm">th</sup> DECEMBER, 2026
+                </p>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="mt-8">
+                <p class="font-sans text-sm uppercase tracking-widest text-gray-500 mb-4">The celebration begins in</p>
+                <div id="countdown" class="flex justify-center gap-4 md:gap-8 font-serif text-brand-darkgreen">
+                    <div class="flex flex-col items-center">
+                        <span id="days" class="text-3xl md:text-5xl font-semibold bg-white shadow-sm rounded-lg w-16 h-16 md:w-20 md:h-20 flex items-center justify-center border border-brand-green">00</span>
+                        <span class="text-xs uppercase tracking-wider mt-2">Days</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="hours" class="text-3xl md:text-5xl font-semibold bg-white shadow-sm rounded-lg w-16 h-16 md:w-20 md:h-20 flex items-center justify-center border border-brand-green">00</span>
+                        <span class="text-xs uppercase tracking-wider mt-2">Hours</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="minutes" class="text-3xl md:text-5xl font-semibold bg-white shadow-sm rounded-lg w-16 h-16 md:w-20 md:h-20 flex items-center justify-center border border-brand-green">00</span>
+                        <span class="text-xs uppercase tracking-wider mt-2">Mins</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="seconds" class="text-3xl md:text-5xl font-semibold bg-white shadow-sm rounded-lg w-16 h-16 md:w-20 md:h-20 flex items-center justify-center border border-brand-green">00</span>
+                        <span class="text-xs uppercase tracking-wider mt-2">Secs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="font-cursive text-5xl md:text-6xl text-center text-brand-darkgreen mb-16 reveal">The Itinerary</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Event 1: Aurora Affair -->
+                <div class="reveal rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-white border border-[#2c3954] flex flex-col relative aurora-bg">
+                    <div class="absolute inset-0 stars-pattern"></div>
+                    <div class="h-56 relative flex justify-center items-end pb-4 z-10">
+                        
+                        <!-- Chandelier Left -->
+                        <svg class="absolute top-0 left-6 w-12 h-20 text-[#bfdbfe] opacity-80 drop-shadow-md" viewBox="0 0 50 100" fill="currentColor">
+                            <path d="M25 0 L25 10 M15 10 L35 10 M10 25 L40 25 M5 40 L45 40 M25 10 L10 25 M25 10 L40 25 M15 10 L5 40 M35 10 L45 40" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <circle cx="25" cy="50" r="3"/> <circle cx="15" cy="45" r="2"/> <circle cx="35" cy="45" r="2"/>
+                            <circle cx="5" cy="40" r="1.5"/> <circle cx="45" cy="40" r="1.5"/>
+                            <path d="M25 50 L25 65 M15 45 L15 55 M35 45 L35 55 M5 40 L5 48 M45 40 L45 48" stroke="currentColor" stroke-width="0.5"/>
+                        </svg>
+
+                        <!-- Chandelier Right -->
+                        <svg class="absolute top-0 right-6 w-12 h-20 text-[#bfdbfe] opacity-80 drop-shadow-md" viewBox="0 0 50 100" fill="currentColor">
+                            <path d="M25 0 L25 10 M15 10 L35 10 M10 25 L40 25 M5 40 L45 40 M25 10 L10 25 M25 10 L40 25 M15 10 L5 40 M35 10 L45 40" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <circle cx="25" cy="50" r="3"/> <circle cx="15" cy="45" r="2"/> <circle cx="35" cy="45" r="2"/>
+                            <circle cx="5" cy="40" r="1.5"/> <circle cx="45" cy="40" r="1.5"/>
+                            <path d="M25 50 L25 65 M15 45 L15 55 M35 45 L35 55 M5 40 L5 48 M45 40 L45 48" stroke="currentColor" stroke-width="0.5"/>
+                        </svg>
+
+                        <!-- Elegant Dancing Couple Silhouette SVG -->
+                        <svg class="w-48 h-48 md:w-56 md:h-56 text-white z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] relative top-4" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Magical Glowing Dust -->
+                            <circle cx="40" cy="150" r="1.5" fill="#fbbf24" class="animate-pulse" />
+                            <circle cx="160" cy="130" r="2" fill="#fbbf24" class="animate-pulse" style="animation-delay: 0.5s;" />
+                            <circle cx="150" cy="170" r="1" fill="#fbbf24" class="animate-pulse" style="animation-delay: 1s;" />
+                            <circle cx="30" cy="100" r="2" fill="#fbbf24" class="animate-pulse" style="animation-delay: 1.5s;" />
+
+                            <!-- Floating Musical Notes -->
+                            <path d="M 15 60 L 22 53 L 22 65 Z" fill="#fbbf24" class="animate-float" />
+                            <path d="M 180 50 L 187 43 L 187 55 Z" fill="#fbbf24" style="animation: float 5s ease-in-out infinite;" />
+
+                            <!-- Male Silhouette (Sherwani) -->
+                            <ellipse cx="130" cy="40" rx="7" ry="9" />
+                            <path d="M 120 55 Q 135 50 140 60 L 135 125 Q 125 130 115 125 Z" />
+                            <path d="M 120 125 L 110 190 L 118 190 L 126 125 Z" />
+                            <path d="M 128 125 L 138 190 L 146 190 L 134 125 Z" />
+                            <path d="M 123 60 Q 105 70 95 62" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <path d="M 138 62 Q 150 70 145 90" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+                            <!-- Female Silhouette (Lehenga) -->
+                            <ellipse cx="75" cy="48" rx="6.5" ry="8.5" />
+                            <path d="M 69 48 Q 62 55 72 60" fill="currentColor"/>
+                            <path d="M 72 62 Q 82 58 87 68 Q 87 88 80 98 Q 72 88 72 62 Z" />
+                            <path d="M 80 98 C 105 105 145 155 140 185 C 135 195 20 195 15 185 C 10 155 55 105 80 98 Z" fill="url(#lehenga-aurora-grad)" />
+                            <path d="M 87 68 C 102 75 115 105 98 135 C 92 145 102 125 112 95 C 117 75 102 60 87 68 Z" opacity="0.8"/>
+                            <path d="M 72 62 C 52 75 32 95 25 125 C 18 150 35 115 52 85 C 62 65 72 62 72 62 Z" opacity="0.6"/>
+                            <path d="M 77 68 Q 65 50 55 55" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                            
+                            <defs>
+                                <linearGradient id="lehenga-aurora-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffffff" />
+                                    <stop offset="100%" stop-color="#e2e8f0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="p-8 text-center flex-grow flex flex-col z-10 bg-black/20 backdrop-blur-[2px]">
+                        <p class="font-cursive text-3xl text-[#fbbf24] mb-2 drop-shadow-sm">The Wedding Eve</p>
+                        <h3 class="font-serif text-3xl font-semibold mb-2 text-white tracking-wide">The Aurora Affair</h3>
+                        <div class="flex-grow mt-4">
+                            <p class="font-sans text-sm tracking-widest uppercase text-gray-200 mb-4 border-b border-white/20 pb-4">
+                                Saturday <span class="text-xl mx-2 font-serif text-[#fbbf24]">|</span> 5 <span class="text-xl mx-2 font-serif text-[#fbbf24]">|</span> FROM 6 PM
+                                <br><span class="text-xs mt-1 block opacity-80">2026</span>
+                            </p>
+                            <p class="font-sans text-sm text-gray-200 leading-relaxed uppercase mb-6">
+                                Venue:<br>
+                                <span class="font-semibold text-white tracking-wide">Orchid Villa, Adyar Garden, Mangalore</span>
+                            </p>
+                            <p class="font-sans text-xs italic text-[#fbbf24] bg-white/10 p-3 rounded-lg border border-white/10">
+                                Dress code: Colours of northern lights like deep blue, deep pink, violet, deep green, silver
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: The Forever Chapter -->
+                <div class="reveal rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-[#f0fdf4] border border-[#86efac] flex flex-col">
+                    <div class="h-56 bg-gradient-to-b from-[#bbf7d0] via-[#86efac] to-[#dcfce7] relative flex justify-center items-end pb-2 overflow-hidden">
+                        
+                        <!-- Grand Temple / Mandap Background -->
+                        <svg class="absolute inset-0 w-full h-full text-[#065f46] opacity-30" viewBox="0 0 200 100" preserveAspectRatio="none">
+                            <rect x="15" y="10" width="20" height="90" fill="url(#green-gold-grad)"/>
+                            <rect x="165" y="10" width="20" height="90" fill="url(#green-gold-grad)"/>
+                            <rect x="10" y="80" width="30" height="20" fill="#047857"/>
+                            <rect x="160" y="80" width="30" height="20" fill="#047857"/>
+                            <rect x="10" y="10" width="30" height="15" fill="#047857"/>
+                            <rect x="160" y="10" width="30" height="15" fill="#047857"/>
+                            <path d="M 35 25 Q 50 -5 100 15 Q 150 -5 165 25 L 165 10 L 35 10 Z" fill="url(#green-gold-grad)"/>
+                            
+                            <defs>
+                                <linearGradient id="green-gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#047857" />
+                                    <stop offset="50%" stop-color="#10b981" />
+                                    <stop offset="100%" stop-color="#047857" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <!-- Peacock Illustration -->
+                        <svg class="absolute bottom-4 right-6 w-16 h-16 text-[#059669] z-10 opacity-90 drop-shadow-md" viewBox="0 0 100 100" fill="currentColor">
+                            <!-- Body -->
+                            <path d="M 60 70 C 60 85 45 90 40 90 C 35 90 35 80 40 75 C 45 70 50 65 55 50 C 60 30 65 20 70 15 C 75 10 85 15 80 25 C 75 35 70 45 60 70 Z" fill="#047857"/>
+                            <!-- Tail Feathers -->
+                            <path d="M 45 75 C 10 80 0 50 10 30 C 20 10 50 0 65 15 C 50 25 35 45 45 75 Z" fill="#10b981" opacity="0.8"/>
+                            <circle cx="20" cy="40" r="3" fill="#fcd34d"/>
+                            <circle cx="30" cy="25" r="3" fill="#fcd34d"/>
+                            <circle cx="45" cy="15" r="3" fill="#fcd34d"/>
+                            <circle cx="15" cy="55" r="3" fill="#fcd34d"/>
+                            <!-- Crest -->
+                            <path d="M 75 12 L 80 5 M 78 14 L 85 8 M 80 17 L 88 12" stroke="#fcd34d" stroke-width="1.5"/>
+                            <circle cx="80" cy="5" r="1.5" fill="#fcd34d"/>
+                            <circle cx="85" cy="8" r="1.5" fill="#fcd34d"/>
+                            <circle cx="88" cy="12" r="1.5" fill="#fcd34d"/>
+                        </svg>
+
+                        <!-- Couple on Swing Silhouette -->
+                        <svg class="w-40 h-40 z-10 drop-shadow-xl relative right-4" viewBox="0 0 100 100" fill="currentColor">
+                            <!-- Swing Ropes -->
+                            <line x1="25" y1="0" x2="25" y2="70" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="3 1"/>
+                            <line x1="75" y1="0" x2="75" y2="70" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="3 1"/>
+                            
+                            <!-- Floral Vines -->
+                            <path d="M25 10 Q30 15 25 20 Q20 25 25 30 Q30 35 25 40" stroke="#047857" stroke-width="1.5" fill="none"/>
+                            <path d="M75 15 Q80 20 75 25 Q70 30 75 35 Q80 40 75 45" stroke="#047857" stroke-width="1.5" fill="none"/>
+
+                            <!-- Swing Base -->
+                            <rect x="15" y="70" width="70" height="6" rx="2" fill="#064e3b"/>
+                            <rect x="15" y="70" width="70" height="2" fill="#fbbf24"/>
+                            
+                            <!-- Male Figure (Beige Kurta) -->
+                            <path d="M60 45 C65 45, 68 40, 63 35 C58 40, 60 45, 60 45 Z" fill="#3f2e28"/>
+                            <path d="M55 45 C65 42, 70 48, 70 55 L70 70 L52 70 C52 60, 52 50, 55 45 Z" fill="#fef3c7" stroke="#fde68a" stroke-width="0.5"/>
+                            
+                            <!-- Female Figure (Purple Saree) -->
+                            <path d="M45 48 C40 48, 35 43, 40 38 C45 38, 50 43, 45 48 Z" fill="#1a1a1a"/>
+                            <path d="M38 45 C45 40, 55 55, 52 65 L40 70 L30 70 C30 60, 32 50, 38 45 Z" fill="url(#saree-purple-grad)"/>
+                            <path d="M38 42 C45 42, 50 55, 48 65 C45 55, 40 45, 38 42 Z" fill="#1a1a1a"/>
+                            
+                            <defs>
+                                <linearGradient id="saree-purple-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#a855f7" />
+                                    <stop offset="100%" stop-color="#581c87" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="p-8 text-center flex-grow flex flex-col bg-white/80">
+                        <h3 class="font-serif text-3xl font-semibold text-[#065f46] mb-2">The Forever Chapter</h3>
+                        <div class="flex-grow">
+                            <p class="font-sans text-sm tracking-widest uppercase text-gray-600 mb-4 border-b border-[#86efac] pb-4">
+                                Sunday <span class="text-xl mx-2 font-serif text-[#10b981]">|</span> 06 <span class="text-xl mx-2 font-serif text-[#10b981]">|</span> 11:12 AM
+                                <br><span class="text-xs mt-1 block">DECEMBER 2026</span>
+                            </p>
+                            <p class="font-sans text-sm text-gray-800 leading-relaxed uppercase">
+                                Venue:<br>
+                                <span class="font-semibold text-[#065f46]">Aster Banquets, Adyar Garden, Mangalore</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Wedding Reception -->
+                <div class="reveal rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-[#0f172a] border border-[#334155] flex flex-col relative">
+                    <div class="absolute inset-0 stars-pattern opacity-50"></div>
+                    
+                    <div class="h-56 relative flex justify-center items-end pb-6 overflow-hidden z-10">
+                        <!-- Glowing Moon -->
+                        <svg class="absolute top-6 right-8 w-14 h-14 text-[#fef08a] opacity-90 animate-pulse" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M 70 10 C 40 10 15 35 15 65 C 15 75 18 85 22 92 C 45 80 60 55 60 25 C 60 18 58 12 55 6 C 60 7 65 8 70 10 Z" filter="drop-shadow(0px 0px 10px rgba(254, 240, 138, 0.6))"/>
+                        </svg>
+                        
+                        <!-- Ambient String Lights -->
+                        <svg class="absolute top-0 inset-x-0 w-full h-24 text-[#fbbf24] opacity-70" viewBox="0 0 200 50" preserveAspectRatio="none">
+                            <path d="M 0 10 Q 25 30 50 10 T 100 10 T 150 10 T 200 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                            <circle cx="25" cy="20" r="1.5" class="animate-pulse" />
+                            <circle cx="75" cy="20" r="1.5" class="animate-pulse" style="animation-delay: 0.5s;" />
+                            <circle cx="125" cy="20" r="1.5" class="animate-pulse" style="animation-delay: 1s;" />
+                            <circle cx="175" cy="20" r="1.5" class="animate-pulse" style="animation-delay: 1.5s;" />
+                        </svg>
+
+                        <!-- Toasting Champagne Glasses -->
+                        <svg class="w-32 h-32 text-white z-10 drop-shadow-[0_0_12px_rgba(255,255,255,0.2)]" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Left Glass -->
+                            <path d="M 85 100 L 95 100 L 90 125 Z" fill="#fcd34d" opacity="0.8"/>
+                            <path d="M 89 125 L 91 125 L 90 145 Z" fill="#94a3b8"/>
+                            <path d="M 83 145 L 97 145" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Right Glass -->
+                            <path d="M 105 95 L 115 95 L 110 120 Z" fill="#fcd34d" opacity="0.8"/>
+                            <path d="M 109 120 L 111 120 L 110 140 Z" fill="#94a3b8"/>
+                            <path d="M 103 140 L 117 140" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Sparkles / Cheers impact -->
+                            <path d="M 97 90 L 100 85 L 103 90 L 100 95 Z" fill="#fbbf24" class="animate-pulse"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="p-8 text-center flex-grow flex flex-col z-10 bg-black/30 backdrop-blur-sm border-t border-white/5">
+                        <h3 class="font-serif text-3xl font-semibold text-[#fef08a] mb-2 tracking-wide">Wedding Reception</h3>
+                        <div class="flex-grow mt-4">
+                            <p class="font-sans text-sm tracking-widest uppercase text-gray-300 mb-4 border-b border-[#334155] pb-4">
+                                Saturday <span class="text-xl mx-2 font-serif text-[#fbbf24]">|</span> 19 <span class="text-xl mx-2 font-serif text-[#fbbf24]">|</span> 6:30 PM
+                                <br><span class="text-xs mt-1 block opacity-70">DECEMBER 2026</span>
+                            </p>
+                            <p class="font-sans text-sm text-gray-300 leading-relaxed uppercase mb-6">
+                                Venue:<br>
+                                <span class="font-semibold text-white tracking-wide">Kshatrekya Samaj Hall, Alibag</span>
+                            </p>
+                            <p class="font-sans text-xs italic text-[#94a3b8]">
+                                Join us for a magical evening celebrating our new beginning under the stars.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Modal (Placeholder interaction) -->
+    <div id="rsvp-modal" class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative">
+            <button onclick="document.getElementById('rsvp-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="font-serif text-2xl text-brand-darkgreen text-center mb-6">RSVP</h3>
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('RSVP sent successfully! (This is a placeholder)'); document.getElementById('rsvp-modal').classList.add('hidden');">
+                <div>
+                    <label class="block text-sm font-sans text-gray-700 mb-1">Full Name</label>
+                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-brand-darkgreen focus:ring-1 focus:ring-brand-darkgreen">
+                </div>
+                <div>
+                    <label class="block text-sm font-sans text-gray-700 mb-1">Email</label>
+                    <input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-brand-darkgreen focus:ring-1 focus:ring-brand-darkgreen">
+                </div>
+                <div>
+                    <label class="block text-sm font-sans text-gray-700 mb-1">Will you attend?</label>
+                    <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-brand-darkgreen focus:ring-1 focus:ring-brand-darkgreen">
+                        <option>Joyfully accept</option>
+                        <option>Regretfully decline</option>
+                    </select>
+                </div>
+                <button type="button" onclick="closeModalAndShowMessage()" class="w-full bg-brand-darkgreen text-white font-serif py-3 rounded-lg hover:bg-[#1f362a] transition-colors mt-4">
+                    Send Reply
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 bg-brand-darkgreen text-white px-6 py-3 rounded-lg shadow-lg z-50 font-sans flex items-center space-x-3 pointer-events-none">
+        <svg class="w-5 h-5 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span>RSVP submitted successfully!</span>
+    </div>
+
+    <script>
+        // Countdown Timer Logic
+        // Target: December 5, 2026, 10:00:00
+        const countDownDate = new Date("Dec 5, 2026 10:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in the elements
+            document.getElementById("days").innerHTML = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
+            // If the count down is over
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<div class='text-2xl'>The celebrations have begun!</div>";
+            }
+        }, 1000);
+
+        // Scroll Animation Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // RSVP Modal Handlers
+        function closeModalAndShowMessage() {
+            // Close modal
+            document.getElementById('rsvp-modal').classList.add('hidden');
+            
+            // Show toast message (instead of alert)
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // --- Door Overlay & Audio Logic ---
+        let musicPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('music-toggle');
+        const iconPlay = document.getElementById('icon-play');
+        const iconPause = document.getElementById('icon-pause');
+        const mainBody = document.getElementById('main-body');
+
+        function openInvitation() {
+            // Animate doors opening (Tailwind classes)
+            document.getElementById('door-left').classList.add('-translate-x-full');
+            document.getElementById('door-right').classList.add('translate-x-full');
+            document.getElementById('open-btn-container').classList.add('opacity-0');
+            
+            // Restore scrolling on the main page
+            mainBody.classList.remove('h-screen', 'overflow-y-hidden');
+
+            // Fade out the overlay background
+            setTimeout(() => {
+                document.getElementById('entry-overlay').classList.add('opacity-0');
+                
+                // Completely hide overlay element to allow page interaction
+                setTimeout(() => {
+                    document.getElementById('entry-overlay').style.display = 'none';
+                    // Re-trigger scroll animations now that elements are visible
+                    reveal(); 
+                }, 1000);
+            }, 800);
+
+            // Attempt to play music
+            bgMusic.play().then(() => {
+                musicPlaying = true;
+                musicToggle.classList.remove('hidden');
+                updateMusicIcon();
+            }).catch(err => {
+                console.log("Audio play was blocked by browser", err);
+                // Even if blocked (browser rules), show the toggle button so user can click to play
+                musicToggle.classList.remove('hidden');
+                updateMusicIcon();
+            });
+        }
+
+        function toggleMusic() {
+            if (musicPlaying) {
+                bgMusic.pause();
+            } else {
+                bgMusic.play();
+            }
+            musicPlaying = !musicPlaying;
+            updateMusicIcon();
+        }
+
+        function updateMusicIcon() {
+            if (musicPlaying) {
+                iconPlay.classList.add('hidden');
+                iconPause.classList.remove('hidden');
+            } else {
+                iconPlay.classList.remove('hidden');
+                iconPause.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
